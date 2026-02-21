@@ -987,6 +987,10 @@ footer {
     grid-template-columns: 1fr;
   }
 
+  .pi {
+    height: auto;
+  }
+
   .cs {
     padding: 3rem 1.5rem;
   }
