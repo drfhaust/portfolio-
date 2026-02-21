@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HUSB238 USB-PD Driver - Daniel Olaifa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<nav><div class="ni"><a href="../index.html" class="logo">daniel<span>.</span>olaifa</a><a href="../index.html#projects" class="back"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"/></svg>All Projects</a></div></nav>
+
+<div class="c c-narrow">
+<section class="hero">
+<span class="pt">ESP-IDF Component</span>
+<h1>HUSB238 USB-PD Sink Driver</h1>
+<div class="meta">
+<div class="meta-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"/></svg>2024</div>
+<div class="meta-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5"/></svg>C / ESP-IDF</div>
+</div>
+<p class="tagline">Production-quality ESP-IDF driver for the Hynetek HUSB238 USB Power Delivery sink controller. Two-layer API architecture - low-level register access and a high-level FreeRTOS controller with automatic device detection, hot-plug handling, state machine, and thread-safe voltage selection. Published on the Espressif Component Registry.</p>
+<div class="actions">
+<a href="mailto:akolaifa4@gmail.com" class="btn bp"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z"/></svg>Ask about this project</a>
+<a href="https://github.com/drfhaust/husb238" target="_blank" class="btn bg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>View on GitHub</a>
+</div>
+</section>
+
+<section class="fi">
+<div class="specs"><h3>Technical Specs</h3><div class="spec-grid">
+<div class="spec-item"><div class="spec-label">IC</div><div class="spec-value">Hynetek HUSB238 USB-PD Sink</div></div>
+<div class="spec-item"><div class="spec-label">Voltage Range</div><div class="spec-value">5V, 9V, 12V, 15V, 18V, 20V</div></div>
+<div class="spec-item"><div class="spec-label">Current Range</div><div class="spec-value">500mA – 5A (16 levels)</div></div>
+<div class="spec-item"><div class="spec-label">Interface</div><div class="spec-value">I2C @ 0x08 (up to 400kHz)</div></div>
+<div class="spec-item"><div class="spec-label">API Surface</div><div class="spec-value">32 public functions</div></div>
+<div class="spec-item"><div class="spec-label">Architecture</div><div class="spec-value">Low-level register + high-level controller</div></div>
+<div class="spec-item"><div class="spec-label">RTOS Integration</div><div class="spec-value">FreeRTOS task with mutex protection</div></div>
+<div class="spec-item"><div class="spec-label">State Machine</div><div class="spec-value">5 states (NOT_PRESENT → CONNECTED)</div></div>
+<div class="spec-item"><div class="spec-label">I2C Bus Modes</div><div class="spec-value">Controller-managed or user-provided</div></div>
+<div class="spec-item"><div class="spec-label">Kconfig Options</div><div class="spec-value">7 (GPIO, freq, stack, priority, log level)</div></div>
+<div class="spec-item"><div class="spec-label">Target Chips</div><div class="spec-value">ESP32, S2, S3, C3, C5, C6, H2</div></div>
+<div class="spec-item"><div class="spec-label">ESP-IDF Version</div><div class="spec-value">≥ 5.0.0</div></div>
+<div class="spec-item"><div class="spec-label">Examples</div><div class="spec-value">3 (basic, button_select, Arduino)</div></div>
+<div class="spec-item"><div class="spec-label">Version</div><div class="spec-value">1.0.1</div></div>
+<div class="spec-item"><div class="spec-label">License</div><div class="spec-value">MIT</div></div>
+<div class="spec-item"><div class="spec-label">Published</div><div class="spec-value">Espressif Component Registry</div></div>
+</div></div>
+<div class="tags"><span class="tag a">USB-C PD</span><span class="tag a">I2C</span><span class="tag a">ESP-IDF</span><span class="tag">FreeRTOS</span><span class="tag">HUSB238</span><span class="tag">5V–20V</span><span class="tag">Hot-Plug</span><span class="tag">State Machine</span><span class="tag">Kconfig</span><span class="tag">Espressif Registry</span><span class="tag">Thread-Safe</span><span class="tag">MIT License</span></div>
+</section>
+
+<section class="fi">
+<div class="gallery"><div class="gi"><img src="../images/husb238.png" alt="HUSB238 USB-PD Sink Driver - ESP32 development board with USB-C power delivery tester showing 19.7V negotiated voltage, driver code and serial monitor output, branded banner with ESP-IDF Component tags"></div></div>
+
+<div class="desc">
+<h3>Two-Layer API Architecture</h3>
+<p>The driver is split into two complementary layers. The <strong>low-level register API</strong> (<code>husb238.c</code>, 16 functions) provides direct I2C access to all HUSB238 registers - reading PD status, querying source capabilities, selecting voltages, and issuing GO commands (request PD, get capabilities, hard reset). Each register read/write uses a 100ms I2C timeout with proper error propagation.</p>
+<p>The <strong>high-level controller API</strong> (<code>husb238_controller.c</code>, 13 functions) wraps this in a FreeRTOS background task that continuously monitors device presence and attachment state. It manages a 5-state machine (NOT_PRESENT → INITIALIZING → WAITING_PD → CONNECTED → ERROR), fires callbacks on voltage and state changes, and provides mutex-protected operations like <code>husb238_controller_next_voltage()</code> and <code>husb238_controller_request_voltage()</code> for thread-safe multi-task usage.</p>
+
+<h3>PD Negotiation &amp; Voltage Selection</h3>
+<p>When a USB-C PD source connects, the controller waits 500ms for PD negotiation to complete, reads the response code, then scans all six voltage registers (5V through 20V) to build a list of available PDOs with their maximum current capabilities. The non-contiguous register encoding (5V/9V/12V at 0x01–0x03, 15V/18V/20V jumping to 0x08–0x0A) is abstracted away so the user just sees a clean index-based API.</p>
+<p>After selecting a voltage via <code>husb238_select_pd()</code> and issuing the GO command, the driver waits 500ms then reads back the actual negotiated voltage for verification. If there's a mismatch (source rejected the request), it returns <code>ESP_ERR_INVALID_RESPONSE</code> but still updates state and fires the callback so the application can decide how to respond. The optional <code>force_5v_on_connect</code> config flag ensures a safe starting voltage on every cable insertion.</p>
+</div>
+</section>
+
+<section class="fi">
+<div class="desc">
+<h3>I2C Bus Management</h3>
+<p>The component supports two I2C modes. <strong>Option A:</strong> the controller creates and owns the I2C bus internally - just provide SDA/SCL GPIO numbers and it calls <code>i2c_new_master_bus()</code> on I2C_NUM_0 with internal pull-ups and glitch filtering (count = 7). On deinit, the bus is deleted. <strong>Option B:</strong> pass your own <code>i2c_master_bus_handle_t</code> for bus sharing with other I2C devices - the controller uses it but won't delete it on cleanup (tracked by an internal <code>i2c_bus_owned</code> flag).</p>
+<p>During device polling, I2C error log spam is suppressed by temporarily setting the <code>i2c.master</code> log tag to <code>ESP_LOG_NONE</code>, then restoring the previous level. This keeps serial output clean when the HUSB238 isn't connected yet - a detail that matters in production firmware where you're watching logs for real issues.</p>
+
+<h3>Kconfig &amp; Examples</h3>
+<p>Seven Kconfig options live under <code>Component config → HUSB238 Configuration</code>: I2C SDA/SCL GPIOs, bus frequency (10kHz–400kHz), force-5V-on-connect toggle, FreeRTOS task stack size (2048–8192) and priority (1–24), and a 6-level log verbosity selector. Three example projects demonstrate different integration patterns: basic polling, physical button voltage cycling with GPIO interrupt + debounce, and an Arduino-ESP32 variant using <code>setup()</code>/<code>loop()</code> with <code>Serial.printf()</code> output.</p>
+</div>
+</section>
+</div>
+
+<footer><div class="c">&copy; 2026 Daniel Olaifa</div></footer>
+<script>
+const o = new IntersectionObserver(e => {
+  e.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('v');
+      o.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fi').forEach(e => o.observe(e));
+</script>
+</body>
+</html>

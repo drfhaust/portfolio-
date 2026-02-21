@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LED Status - WS2812/SK6812 Indicator - Daniel Olaifa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<nav><div class="ni"><a href="../index.html" class="logo">daniel<span>.</span>olaifa</a><a href="../index.html#projects" class="back"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"/></svg>All Projects</a></div></nav>
+
+<div class="c c-narrow">
+<section class="hero">
+<span class="pt">ESP-IDF Component</span>
+<h1>LED Status - Addressable LED Indicator</h1>
+<div class="meta">
+<div class="meta-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"/></svg>2025</div>
+<div class="meta-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5"/></svg>C / ESP-IDF</div>
+</div>
+<p class="tagline">Flexible WS2812/SK6812/WS2811 LED status indicator component for ESP-IDF. 22-function API with 8 built-in animated patterns (blink, pulse, chase, double-blink), custom animation callbacks, timed display with auto-revert, flash overlay, global brightness scaling, HSV color utilities, and per-pixel control - all driven by a non-blocking FreeRTOS background task.</p>
+<div class="actions">
+<a href="mailto:akolaifa4@gmail.com" class="btn bp"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z"/></svg>Ask about this project</a>
+<a href="https://github.com/drfhaust/led-status" target="_blank" class="btn bg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>View on GitHub</a>
+</div>
+</section>
+
+<section class="fi">
+<div class="specs"><h3>Technical Specs</h3><div class="spec-grid">
+<div class="spec-item"><div class="spec-label">LED Models</div><div class="spec-value">WS2812 (GRB), SK6812 (GRB), WS2811 (RGB)</div></div>
+<div class="spec-item"><div class="spec-label">API Surface</div><div class="spec-value">22 public functions + 1 macro</div></div>
+<div class="spec-item"><div class="spec-label">Patterns</div><div class="spec-value">8 built-in (blink, pulse, chase, double-blink, solid, off, custom)</div></div>
+<div class="spec-item"><div class="spec-label">Colors</div><div class="spec-value">9 predefined + arbitrary RGB + HSV conversion</div></div>
+<div class="spec-item"><div class="spec-label">LED Count</div><div class="spec-value">1–256 addressable LEDs per strip</div></div>
+<div class="spec-item"><div class="spec-label">Driver</div><div class="spec-value">RMT peripheral via espressif/led_strip (10 MHz)</div></div>
+<div class="spec-item"><div class="spec-label">Concurrency</div><div class="spec-value">FreeRTOS background task + mutex protection</div></div>
+<div class="spec-item"><div class="spec-label">Configuration</div><div class="spec-value">13 fields, runtime only (no Kconfig)</div></div>
+<div class="spec-item"><div class="spec-label">Target Chips</div><div class="spec-value">ESP32, S2, S3, C3, C6, H2</div></div>
+<div class="spec-item"><div class="spec-label">ESP-IDF Version</div><div class="spec-value">&ge; 5.0.0</div></div>
+<div class="spec-item"><div class="spec-label">Examples</div><div class="spec-value">2 (basic pattern cycling, custom callbacks)</div></div>
+<div class="spec-item"><div class="spec-label">License</div><div class="spec-value">MIT</div></div>
+</div></div>
+<div class="tags"><span class="tag a">WS2812</span><span class="tag a">SK6812</span><span class="tag a">ESP-IDF</span><span class="tag">RMT</span><span class="tag">Addressable LED</span><span class="tag">FreeRTOS</span><span class="tag">Animations</span><span class="tag">HSV</span><span class="tag">Custom Callbacks</span><span class="tag">Espressif Registry</span><span class="tag">MIT License</span></div>
+</section>
+
+<section class="fi">
+<div class="gallery"><div class="gi"><img src="../images/led-status.png" alt="LED Status component - WS2812/SK6812 addressable LED indicator"></div></div>
+<div class="desc">
+<h3>Non-Blocking Animation Engine</h3>
+<p>The component runs all animations in a dedicated FreeRTOS background task, so calling <code>led_status_set(LED_STATUS_PULSE, LED_COLOR_BLUE)</code> returns immediately and never blocks the application. Pattern state is protected by a mutex, and the flash override uses a volatile flag for low-latency lock-free signaling. The task supports core pinning on dual-core chips via the config struct.</p>
+<p>Eight built-in patterns cover common status indicator needs: solid, slow blink (1 Hz), fast blink (5 Hz), double-blink, smooth sine-wave pulse with squared gamma correction for perceptual linearity, and a chase animation with a 2-level fading trail (25% and 6.25% brightness) that gracefully degrades to pulse on single-LED strips. All timing parameters (blink period, pulse cycle, chase step) are configurable per-instance.</p>
+
+<h3>Custom Animation Callbacks</h3>
+<p>Beyond the built-in patterns, you can register a custom callback via <code>led_status_set_custom_callback()</code> that gets full per-pixel control. The callback receives the LED count, a user context pointer, and returns the delay until the next frame (clamped 10–1000ms). The included example project demonstrates three custom patterns: rainbow cycle (HSV hue rotation across LEDs), color wipe (sequential fill with rotating colors), and theater chase (marquee with rotating hue).</p>
+</div>
+</section>
+
+<section class="fi">
+<div class="desc">
+<h3>Flash Overlay &amp; Timed Display</h3>
+<p><code>led_status_flash()</code> provides a non-blocking flash overlay - it temporarily shows a color for a specified duration then automatically restores the previous pattern state. This is useful for feedback (e.g., flash green on successful WiFi connect) without disrupting the current status animation. The timed display functions (<code>led_status_show_timed()</code>) are similar but auto-revert to off instead of the previous state.</p>
+
+<h3>Minimal Single-File Design</h3>
+<p>The entire component is a single <code>led_status.c</code> (~450 lines) with a single header (~250 lines, fully Doxygen-documented). Global brightness is applied per-channel via <code>(value * brightness) / 255</code> before reaching hardware. The HSV-to-RGB utility supports full 0–360 hue range. Resource cleanup in <code>led_status_deinit()</code> deletes the task, frees the mutex, clears and deletes the LED strip handle, and resets all state. The header includes <code>extern "C"</code> guards for C++ compatibility.</p>
+</div>
+</section>
+</div>
+
+<footer><div class="c">&copy; 2026 Daniel Olaifa</div></footer>
+<script>
+const o = new IntersectionObserver(e => {
+  e.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('v');
+      o.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fi').forEach(e => o.observe(e));
+</script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Environmental Sound Level Meter - Daniel Olaifa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<nav><div class="ni"><a href="../index.html" class="logo">daniel<span>.</span>olaifa</a><a href="../index.html#projects" class="back"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"/></svg>All Projects</a></div></nav>
+
+<div class="c c-narrow">
+<section class="hero">
+<span class="pt">Industrial IoT / DSP / Linux</span>
+<h1>Environmental Sound Level Meter</h1>
+<div class="meta">
+<div class="meta-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"/></svg>2024 – Present</div>
+<div class="meta-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5"/></svg>C / C++ / Python</div>
+</div>
+<p class="tagline">A dual-platform environmental sound level meter built on ESP32-S3 and Raspberry Pi. Real-time 48kHz I2S audio capture with 16384-point FFT, A/C/Z-weighted SPL, 32-band IIR filterbank, BLE provisioning, LoRa mesh networking, professional reference meter integration, Edge Impulse ML inference, and a full Raspberry Pi Linux companion with ALSA audio capture, Python DSP, and a Web Bluetooth control webapp.</p>
+<div class="actions">
+<a href="mailto:akolaifa4@gmail.com" class="btn bp"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z"/></svg>Ask about this project</a>
+</div>
+</section>
+
+<section class="fi">
+<div class="specs"><h3>Technical Specs</h3><div class="spec-grid">
+<div class="spec-item"><div class="spec-label">Platforms</div><div class="spec-value">ESP32-S3 (ESP-IDF 5.5) + Raspberry Pi (Linux)</div></div>
+<div class="spec-item"><div class="spec-label">Audio Capture</div><div class="spec-value">I2S MEMS microphone, 48kHz 32-bit</div></div>
+<div class="spec-item"><div class="spec-label">FFT Engine</div><div class="spec-value">16384-point (esp-dsp), ~2.93 Hz/bin resolution</div></div>
+<div class="spec-item"><div class="spec-label">Weighting</div><div class="spec-value">A, C, Z frequency weighting (FAST/SLOW EWMA)</div></div>
+<div class="spec-item"><div class="spec-label">Filterbank</div><div class="spec-value">32-band IIR 1/3-octave (12.5 Hz – 16 kHz), split-rate</div></div>
+<div class="spec-item"><div class="spec-label">Calibration</div><div class="spec-value">94 dB SPL @ 1kHz reference tone detection</div></div>
+<div class="spec-item"><div class="spec-label">BLE</div><div class="spec-value">NimBLE GATT server, 4 services, 50+ characteristics</div></div>
+<div class="spec-item"><div class="spec-label">LoRa</div><div class="spec-value">Mesh networking with AES-256 encrypted telemetry</div></div>
+<div class="spec-item"><div class="spec-label">Ethernet</div><div class="spec-value">W5500 SPI for professional reference meter integration</div></div>
+<div class="spec-item"><div class="spec-label">Storage</div><div class="spec-value">SDIO 4-bit SD card (WAV + CSV logging)</div></div>
+<div class="spec-item"><div class="spec-label">ML Inference</div><div class="spec-value">Edge Impulse model on ESP32-S3 (esp-nn accelerated)</div></div>
+<div class="spec-item"><div class="spec-label">Pi Audio</div><div class="spec-value">ALSA USB microphone capture via Python/numpy</div></div>
+<div class="spec-item"><div class="spec-label">Pi BLE</div><div class="spec-value">Raspberry Pi acts as BLE SLM peripheral</div></div>
+<div class="spec-item"><div class="spec-label">Webapp</div><div class="spec-value">Web Bluetooth SPA (BLE control + live visualization)</div></div>
+<div class="spec-item"><div class="spec-label">RTOS Tasks</div><div class="spec-value">8+ FreeRTOS tasks across dual cores</div></div>
+<div class="spec-item"><div class="spec-label">OTA</div><div class="spec-value">Factory + OTA partition layout (8MB flash)</div></div>
+</div></div>
+<div class="tags"><span class="tag a">ESP32-S3</span><span class="tag a">Raspberry Pi</span><span class="tag a">Linux</span><span class="tag">I2S</span><span class="tag">FFT</span><span class="tag">DSP</span><span class="tag">BLE</span><span class="tag">LoRa Mesh</span><span class="tag">AES-256</span><span class="tag">W5500</span><span class="tag">ALSA</span><span class="tag">Python</span><span class="tag">Edge Impulse</span><span class="tag">Web Bluetooth</span><span class="tag">NimBLE</span><span class="tag">FreeRTOS</span></div>
+</section>
+
+<section class="fi">
+<div class="gallery"><div class="gi"><img src="../images/sound-meter-1.png" alt="Environmental Sound Level Meter - handheld device render showing LAeq 54.7 dBA reading, real-time spectrum analyzer, BLE and LoRa status indicators, LoRa antenna, measurement microphone, Ethernet port, and SD card slot"></div></div>
+
+<div class="desc">
+<h3>Real-Time Audio Processing Pipeline</h3>
+<p>The ESP32-S3 captures 48kHz 32-bit audio from an I2S MEMS microphone and pushes samples through a multi-stage DSP pipeline running across dedicated FreeRTOS tasks pinned to specific cores. The I2S read task runs at the highest priority on Core 1, feeding a queue to the FFT processor which performs a 16384-point real FFT (via Espressif's esp-dsp library), computes the power spectrum, applies A/C/Z frequency weighting curves, and calculates SPL values with FAST and SLOW exponential moving averages.</p>
+<p>A 32-band split-rate IIR filterbank computes 1/3-octave energy from 12.5 Hz to 16 kHz - 28 bands processed at a decimated 16kHz rate and 4 bands at the native 48kHz rate for efficiency. The filterbank uses second-order sections (SOS) with pre-computed coefficients. Calibration against a 94 dB SPL reference tone at 1kHz is supported with automatic tone detection within a ±50 Hz tolerance window.</p>
+
+<h3>Multi-Protocol Communication Stack</h3>
+<p>Results are dispatched simultaneously to multiple outputs: USB serial (structured CSV protocol for the Pi companion), BLE (live SPL and spectrum streaming via NimBLE GATT), LoRa mesh (AES-256 encrypted measurement packets with mesh routing for multi-hop relay across remote sites), and WiFi. The BLE stack exposes 4 GATT services with 50+ characteristics covering device provisioning, measurement control, live data streaming, and system management.</p>
+<p>A custom W5500 Ethernet driver (with SPI stability fixes and automatic socket recovery) connects to a professional reference sound level meter via its HTTP/JSON REST API over a link-local Ethernet connection - reading calibrated measurement data and aligning timestamps using EWMA clock offset correction.</p>
+</div>
+</section>
+
+<section class="fi">
+<div class="gallery"><div class="gi"><img src="../images/sound-meter-2.png" alt="System architecture - ESP32-S3 node with I2S audio, 16384-point FFT, IIR filterbank, BLE, LoRa mesh, and W5500 Ethernet connected to Raspberry Pi Linux companion with ALSA capture, Python DSP, BLE peripheral, and Web Bluetooth webapp"></div></div>
+
+<div class="desc">
+<h3>Raspberry Pi Linux Companion</h3>
+<p>The Raspberry Pi runs a full Python companion application that operates in two modes: as a <strong>gateway</strong> aggregating data from ESP32 nodes over USB serial, or as a <strong>standalone SLM</strong> capturing audio directly from a USB microphone via ALSA. The Pi audio module scans ALSA devices (<code>arecord -l</code>), supports runtime device switching, and processes audio through a Python implementation of the same split-rate 1/3-octave filterbank running on the ESP32.</p>
+<p>The Pi also acts as a BLE peripheral - mirroring the ESP32's GATT service structure so the same Web Bluetooth webapp can control either platform seamlessly. A WiFi manager handles network configuration, and a built-in HTTP server serves the control webapp locally. The webapp itself is a monolithic single-page application using the Web Bluetooth API for BLE connection, with device detection logic that adapts the UI based on whether it's connected to an ESP32 or a Raspberry Pi (enabling audio device selection and disk recording on Pi, LoRa and reference meter controls on ESP32).</p>
+
+<h3>Edge ML &amp; Advanced Features</h3>
+<p>An Edge Impulse machine learning model runs inference directly on the ESP32-S3, using Espressif's esp-nn library for neural network acceleration. Audio is decimated to 16kHz and fed to the classifier in real-time. The system also records calibration-normalized WAV files and CSV measurement logs to an SDIO 4-bit SD card, with gain adjustment so 94 dB SPL maps to -20 dBFS in recordings. Power loss detection triggers graceful shutdown to protect in-progress recordings and file system integrity. The ESP-IDF devcontainer provides a reproducible Docker-based build environment for the firmware.</p>
+</div>
+</section>
+</div>
+
+<footer><div class="c">&copy; 2026 Daniel Olaifa</div></footer>
+<script>
+const o = new IntersectionObserver(e => {
+  e.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('v');
+      o.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fi').forEach(e => o.observe(e));
+</script>
+</body>
+</html>

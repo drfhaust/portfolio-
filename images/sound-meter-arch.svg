@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" fill="none">
+  <rect width="800" height="480" fill="#1a1a1a"/>
+
+  <!-- Title -->
+  <text x="400" y="36" text-anchor="middle" fill="#888" font-family="Inter, sans-serif" font-size="13" font-weight="500" letter-spacing="2">SYSTEM ARCHITECTURE</text>
+
+  <!-- ESP32-S3 Node -->
+  <rect x="40" y="70" width="320" height="360" rx="12" stroke="#333" stroke-width="1.5" fill="#111"/>
+  <text x="200" y="100" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif" font-size="15" font-weight="700">ESP32-S3 NODE</text>
+  <line x1="80" y1="115" x2="320" y2="115" stroke="#333" stroke-width="1"/>
+
+  <!-- I2S Mic -->
+  <rect x="60" y="130" width="130" height="44" rx="6" fill="#1e1e1e" stroke="#444" stroke-width="1"/>
+  <text x="125" y="148" text-anchor="middle" fill="#aaa" font-family="Inter, sans-serif" font-size="10" font-weight="500">I2S MEMS MIC</text>
+  <text x="125" y="164" text-anchor="middle" fill="#666" font-family="Inter, sans-serif" font-size="9">48kHz 32-bit</text>
+
+  <!-- FFT -->
+  <rect x="210" y="130" width="130" height="44" rx="6" fill="#1e1e1e" stroke="#444" stroke-width="1"/>
+  <text x="275" y="148" text-anchor="middle" fill="#aaa" font-family="Inter, sans-serif" font-size="10" font-weight="500">16384-pt FFT</text>
+  <text x="275" y="164" text-anchor="middle" fill="#666" font-family="Inter, sans-serif" font-size="9">esp-dsp / A,C,Z</text>
+
+  <!-- Arrow mic to fft -->
+  <line x1="190" y1="152" x2="210" y2="152" stroke="#555" stroke-width="1" marker-end="url(#arrow)"/>
+
+  <!-- Filterbank -->
+  <rect x="60" y="190" width="130" height="44" rx="6" fill="#1e1e1e" stroke="#444" stroke-width="1"/>
+  <text x="125" y="208" text-anchor="middle" fill="#aaa" font-family="Inter, sans-serif" font-size="10" font-weight="500">IIR FILTERBANK</text>
+  <text x="125" y="224" text-anchor="middle" fill="#666" font-family="Inter, sans-serif" font-size="9">32-band 1/3-octave</text>
+
+  <!-- ML -->
+  <rect x="210" y="190" width="130" height="44" rx="6" fill="#1e1e1e" stroke="#444" stroke-width="1"/>
+  <text x="275" y="208" text-anchor="middle" fill="#aaa" font-family="Inter, sans-serif" font-size="10" font-weight="500">EDGE IMPULSE ML</text>
+  <text x="275" y="224" text-anchor="middle" fill="#666" font-family="Inter, sans-serif" font-size="9">esp-nn accelerated</text>
+
+  <!-- BLE -->
+  <rect x="60" y="250" width="130" height="44" rx="6" fill="#1e1e1e" stroke="#444" stroke-width="1"/>
+  <text x="125" y="268" text-anchor="middle" fill="#aaa" font-family="Inter, sans-serif" font-size="10" font-weight="500">BLE (NimBLE)</text>
+  <text x="125" y="284" text-anchor="middle" fill="#666" font-family="Inter, sans-serif" font-size="9">4 services / 50+ chars</text>
+
+  <!-- LoRa -->
+  <rect x="210" y="250" width="130" height="44" rx="6" fill="#1e1e1e" stroke="#444" stroke-width="1"/>
+  <text x="275" y="268" text-anchor="middle" fill="#aaa" font-family="Inter, sans-serif" font-size="10" font-weight="500">LoRa MESH</text>
+  <text x="275" y="284" text-anchor="middle" fill="#666" font-family="Inter, sans-serif" font-size="9">AES-256 encrypted</text>
+
+  <!-- SD Card -->
+  <rect x="60" y="310" width="130" height="44" rx="6" fill="#1e1e1e" stroke="#444" stroke-width="1"/>
+  <text x="125" y="328" text-anchor="middle" fill="#aaa" font-family="Inter, sans-serif" font-size="10" font-weight="500">SD CARD</text>
+  <text x="125" y="344" text-anchor="middle" fill="#666" font-family="Inter, sans-serif" font-size="9">WAV + CSV logging</text>
+
+  <!-- W5500 -->
+  <rect x="210" y="310" width="130" height="44" rx="6" fill="#1e1e1e" stroke="#444" stroke-width="1"/>
+  <text x="275" y="328" text-anchor="middle" fill="#aaa" font-family="Inter, sans-serif" font-size="10" font-weight="500">W5500 ETHERNET</text>
+  <text x="275" y="344" text-anchor="middle" fill="#666" font-family="Inter, sans-serif" font-size="9">Reference meter API</text>
+
+  <!-- FreeRTOS label -->
+  <rect x="60" y="370" width="280" height="30" rx="6" fill="#1e1e1e" stroke="#333" stroke-width="1"/>
+  <text x="200" y="390" text-anchor="middle" fill="#555" font-family="Inter, sans-serif" font-size="10" font-weight="600">FreeRTOS · 8+ TASKS · DUAL CORE · ESP-IDF 5.5</text>
+
+  <!-- Raspberry Pi -->
+  <rect x="440" y="70" width="320" height="360" rx="12" stroke="#333" stroke-width="1.5" fill="#111"/>
+  <text x="600" y="100" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif" font-size="15" font-weight="700">RASPBERRY PI (LINUX)</text>
+  <line x1="480" y1="115" x2="720" y2="115" stroke="#333" stroke-width="1"/>
+
+  <!-- ALSA -->
+  <rect x="460" y="130" width="130" height="44" rx="6" fill="#1e1e1e" stroke="#444" stroke-width="1"/>
+  <text x="525" y="148" text-anchor="middle" fill="#aaa" font-family="Inter, sans-serif" font-size="10" font-weight="500">ALSA CAPTURE</text>
+  <text x="525" y="164" text-anchor="middle" fill="#666" font-family="Inter, sans-serif" font-size="9">USB mic / arecord</text>
+
+  <!-- Python DSP -->
+  <rect x="610" y="130" width="130" height="44" rx="6" fill="#1e1e1e" stroke="#444" stroke-width="1"/>
+  <text x="675" y="148" text-anchor="middle" fill="#aaa" font-family="Inter, sans-serif" font-size="10" font-weight="500">PYTHON DSP</text>
+  <text x="675" y="164" text-anchor="middle" fill="#666" font-family="Inter, sans-serif" font-size="9">numpy / filterbank</text>
+
+  <!-- Arrow alsa to dsp -->
+  <line x1="590" y1="152" x2="610" y2="152" stroke="#555" stroke-width="1" marker-end="url(#arrow)"/>
+
+  <!-- BLE Peripheral -->
+  <rect x="460" y="190" width="130" height="44" rx="6" fill="#1e1e1e" stroke="#444" stroke-width="1"/>
+  <text x="525" y="208" text-anchor="middle" fill="#aaa" font-family="Inter, sans-serif" font-size="10" font-weight="500">BLE PERIPHERAL</text>
+  <text x="525" y="224" text-anchor="middle" fill="#666" font-family="Inter, sans-serif" font-size="9">Mirrors ESP32 GATT</text>
+
+  <!-- WiFi Manager -->
+  <rect x="610" y="190" width="130" height="44" rx="6" fill="#1e1e1e" stroke="#444" stroke-width="1"/>
+  <text x="675" y="208" text-anchor="middle" fill="#aaa" font-family="Inter, sans-serif" font-size="10" font-weight="500">WIFI MANAGER</text>
+  <text x="675" y="224" text-anchor="middle" fill="#666" font-family="Inter, sans-serif" font-size="9">Network config</text>
+
+  <!-- Gateway -->
+  <rect x="460" y="250" width="130" height="44" rx="6" fill="#1e1e1e" stroke="#444" stroke-width="1"/>
+  <text x="525" y="268" text-anchor="middle" fill="#aaa" font-family="Inter, sans-serif" font-size="10" font-weight="500">USB GATEWAY</text>
+  <text x="525" y="284" text-anchor="middle" fill="#666" font-family="Inter, sans-serif" font-size="9">Serial protocol parser</text>
+
+  <!-- Web Server -->
+  <rect x="610" y="250" width="130" height="44" rx="6" fill="#1e1e1e" stroke="#444" stroke-width="1"/>
+  <text x="675" y="268" text-anchor="middle" fill="#aaa" font-family="Inter, sans-serif" font-size="10" font-weight="500">HTTP SERVER</text>
+  <text x="675" y="284" text-anchor="middle" fill="#666" font-family="Inter, sans-serif" font-size="9">Serves control webapp</text>
+
+  <!-- LoRa Decrypt -->
+  <rect x="460" y="310" width="130" height="44" rx="6" fill="#1e1e1e" stroke="#444" stroke-width="1"/>
+  <text x="525" y="328" text-anchor="middle" fill="#aaa" font-family="Inter, sans-serif" font-size="10" font-weight="500">LoRa DECRYPT</text>
+  <text x="525" y="344" text-anchor="middle" fill="#666" font-family="Inter, sans-serif" font-size="9">AES-256 gateway RX</text>
+
+  <!-- Web Bluetooth -->
+  <rect x="610" y="310" width="130" height="44" rx="6" fill="#1e1e1e" stroke="#444" stroke-width="1"/>
+  <text x="675" y="328" text-anchor="middle" fill="#aaa" font-family="Inter, sans-serif" font-size="10" font-weight="500">WEB BLUETOOTH</text>
+  <text x="675" y="344" text-anchor="middle" fill="#666" font-family="Inter, sans-serif" font-size="9">SPA control + viz</text>
+
+  <!-- Linux label -->
+  <rect x="460" y="370" width="280" height="30" rx="6" fill="#1e1e1e" stroke="#333" stroke-width="1"/>
+  <text x="600" y="390" text-anchor="middle" fill="#555" font-family="Inter, sans-serif" font-size="10" font-weight="600">LINUX · PYTHON · ALSA · SYSTEMD · DOCKER</text>
+
+  <!-- Connection arrows between ESP32 and Pi -->
+  <!-- USB Serial -->
+  <line x1="360" y1="270" x2="440" y2="270" stroke="#555" stroke-width="1.5" stroke-dasharray="6 3"/>
+  <text x="400" y="262" text-anchor="middle" fill="#666" font-family="Inter, sans-serif" font-size="8">USB</text>
+  <text x="400" y="280" text-anchor="middle" fill="#666" font-family="Inter, sans-serif" font-size="8">SERIAL</text>
+
+  <!-- BLE connection -->
+  <line x1="360" y1="210" x2="440" y2="210" stroke="#555" stroke-width="1.5" stroke-dasharray="6 3"/>
+  <text x="400" y="205" text-anchor="middle" fill="#666" font-family="Inter, sans-serif" font-size="8">BLE</text>
+
+  <!-- LoRa connection -->
+  <line x1="360" y1="332" x2="440" y2="332" stroke="#555" stroke-width="1.5" stroke-dasharray="6 3"/>
+  <text x="400" y="327" text-anchor="middle" fill="#666" font-family="Inter, sans-serif" font-size="8">LoRa</text>
+
+  <!-- Bottom bar -->
+  <rect x="40" y="445" width="720" height="24" rx="6" fill="#161616"/>
+  <text x="400" y="461" text-anchor="middle" fill="#444" font-family="Inter, sans-serif" font-size="9" font-weight="500" letter-spacing="1.5">48kHz I2S · 16384-FFT · 32-BAND IIR · A/C/Z WEIGHTING · CALIBRATION · OTA · NDA PROJECT</text>
+
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6" fill="#555"/>
+    </marker>
+  </defs>
+</svg>

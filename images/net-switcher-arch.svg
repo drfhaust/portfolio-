@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" fill="none">
+  <rect width="800" height="480" fill="#1a1a1a"/>
+
+  <!-- Title -->
+  <text x="400" y="36" text-anchor="middle" fill="#888" font-family="Inter, sans-serif" font-size="13" font-weight="500" letter-spacing="2">NET-SWITCHER FAILOVER ARCHITECTURE</text>
+
+  <!-- WiFi Interface (left) -->
+  <rect x="40" y="70" width="180" height="160" rx="10" stroke="#333" stroke-width="1.5" fill="#111"/>
+  <text x="130" y="98" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif" font-size="13" font-weight="700">WiFi STA</text>
+  <line x1="60" y1="112" x2="200" y2="112" stroke="#333" stroke-width="1"/>
+  <rect x="56" y="124" width="148" height="28" rx="4" fill="#1e1e1e" stroke="#444" stroke-width="1"/>
+  <text x="130" y="142" text-anchor="middle" fill="#aaa" font-family="Inter, sans-serif" font-size="9" font-weight="500">setWiFiConnected()</text>
+  <rect x="56" y="160" width="148" height="28" rx="4" fill="#1e1e1e" stroke="#444" stroke-width="1"/>
+  <text x="130" y="178" text-anchor="middle" fill="#aaa" font-family="Inter, sans-serif" font-size="9" font-weight="500">esp_netif (WiFi)</text>
+  <rect x="56" y="196" width="148" height="22" rx="4" fill="#1e1e1e" stroke="#333" stroke-width="1"/>
+  <text x="130" y="211" text-anchor="middle" fill="#555" font-family="Inter, sans-serif" font-size="8" font-weight="600">DHCP Client</text>
+
+  <!-- Ethernet Interface (left) -->
+  <rect x="40" y="260" width="180" height="160" rx="10" stroke="#333" stroke-width="1.5" fill="#111"/>
+  <text x="130" y="288" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif" font-size="13" font-weight="700">ETHERNET</text>
+  <line x1="60" y1="302" x2="200" y2="302" stroke="#333" stroke-width="1"/>
+  <rect x="56" y="314" width="148" height="28" rx="4" fill="#1e1e1e" stroke="#444" stroke-width="1"/>
+  <text x="130" y="332" text-anchor="middle" fill="#aaa" font-family="Inter, sans-serif" font-size="9" font-weight="500">setEthernetConnected()</text>
+  <rect x="56" y="350" width="148" height="28" rx="4" fill="#1e1e1e" stroke="#444" stroke-width="1"/>
+  <text x="130" y="368" text-anchor="middle" fill="#aaa" font-family="Inter, sans-serif" font-size="9" font-weight="500">esp_netif (Ethernet)</text>
+  <rect x="56" y="386" width="148" height="22" rx="4" fill="#1e1e1e" stroke="#333" stroke-width="1"/>
+  <text x="130" y="401" text-anchor="middle" fill="#555" font-family="Inter, sans-serif" font-size="8" font-weight="600">W5500 / LAN87xx</text>
+
+  <!-- Net-Switcher Core (center) -->
+  <rect x="280" y="100" width="240" height="290" rx="12" stroke="#555" stroke-width="1.5" fill="#111"/>
+  <text x="400" y="130" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif" font-size="15" font-weight="700">NET-SWITCHER</text>
+  <text x="400" y="148" text-anchor="middle" fill="#555" font-family="Inter, sans-serif" font-size="9">18-function API &middot; event-agnostic</text>
+  <line x1="300" y1="160" x2="500" y2="160" stroke="#333" stroke-width="1"/>
+
+  <!-- Decision logic -->
+  <rect x="300" y="172" width="200" height="36" rx="6" fill="#1e1e1e" stroke="#444" stroke-width="1"/>
+  <text x="400" y="188" text-anchor="middle" fill="#aaa" font-family="Inter, sans-serif" font-size="10" font-weight="500">PREFERENCE ENGINE</text>
+  <text x="400" y="202" text-anchor="middle" fill="#666" font-family="Inter, sans-serif" font-size="8">net_switcher_update()</text>
+
+  <!-- Switch function -->
+  <rect x="300" y="220" width="200" height="36" rx="6" fill="#1e1e1e" stroke="#444" stroke-width="1"/>
+  <text x="400" y="236" text-anchor="middle" fill="#aaa" font-family="Inter, sans-serif" font-size="10" font-weight="500">do_switch()</text>
+  <text x="400" y="250" text-anchor="middle" fill="#666" font-family="Inter, sans-serif" font-size="8">Set default netif + DNS + DHCP</text>
+
+  <!-- Callbacks -->
+  <rect x="300" y="268" width="96" height="36" rx="6" fill="#1e1e1e" stroke="#444" stroke-width="1"/>
+  <text x="348" y="284" text-anchor="middle" fill="#aaa" font-family="Inter, sans-serif" font-size="9" font-weight="500">PRE-SWITCH</text>
+  <text x="348" y="298" text-anchor="middle" fill="#666" font-family="Inter, sans-serif" font-size="8">Disconnect</text>
+
+  <rect x="404" y="268" width="96" height="36" rx="6" fill="#1e1e1e" stroke="#444" stroke-width="1"/>
+  <text x="452" y="284" text-anchor="middle" fill="#aaa" font-family="Inter, sans-serif" font-size="9" font-weight="500">POST-SWITCH</text>
+  <text x="452" y="298" text-anchor="middle" fill="#666" font-family="Inter, sans-serif" font-size="8">Reconnect</text>
+
+  <!-- Manual override -->
+  <rect x="300" y="316" width="200" height="28" rx="6" fill="#1e1e1e" stroke="#444" stroke-width="1"/>
+  <text x="400" y="334" text-anchor="middle" fill="#aaa" font-family="Inter, sans-serif" font-size="9" font-weight="500">net_switcher_switchTo() &middot; Manual Override</text>
+
+  <!-- Status bar -->
+  <rect x="300" y="354" width="200" height="24" rx="4" fill="#1e1e1e" stroke="#333" stroke-width="1"/>
+  <text x="400" y="370" text-anchor="middle" fill="#555" font-family="Inter, sans-serif" font-size="8" font-weight="600">Runtime Config &middot; No Kconfig &middot; Zero-Alloc</text>
+
+  <!-- DNS Resolution (right) -->
+  <rect x="580" y="70" width="180" height="200" rx="10" stroke="#333" stroke-width="1.5" fill="#111"/>
+  <text x="670" y="98" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif" font-size="13" font-weight="700">3-TIER DNS</text>
+  <text x="670" y="114" text-anchor="middle" fill="#555" font-family="Inter, sans-serif" font-size="9">push_dns_to_lwip()</text>
+  <line x1="600" y1="126" x2="740" y2="126" stroke="#333" stroke-width="1"/>
+
+  <!-- Tier 1 -->
+  <rect x="596" y="138" width="148" height="30" rx="4" fill="#1e1e1e" stroke="#444" stroke-width="1"/>
+  <text x="610" y="150" fill="#666" font-family="Inter, sans-serif" font-size="8">1</text>
+  <text x="670" y="150" text-anchor="middle" fill="#aaa" font-family="Inter, sans-serif" font-size="9" font-weight="500">Interface DNS</text>
+  <text x="670" y="163" text-anchor="middle" fill="#666" font-family="Inter, sans-serif" font-size="8">MAIN + BACKUP</text>
+
+  <!-- Tier 2 -->
+  <rect x="596" y="176" width="148" height="30" rx="4" fill="#1e1e1e" stroke="#444" stroke-width="1"/>
+  <text x="610" y="188" fill="#666" font-family="Inter, sans-serif" font-size="8">2</text>
+  <text x="670" y="188" text-anchor="middle" fill="#aaa" font-family="Inter, sans-serif" font-size="9" font-weight="500">Gateway IP</text>
+  <text x="670" y="201" text-anchor="middle" fill="#666" font-family="Inter, sans-serif" font-size="8">Router forwards DNS</text>
+
+  <!-- Tier 3 -->
+  <rect x="596" y="214" width="148" height="30" rx="4" fill="#1e1e1e" stroke="#444" stroke-width="1"/>
+  <text x="610" y="226" fill="#666" font-family="Inter, sans-serif" font-size="8">3</text>
+  <text x="670" y="226" text-anchor="middle" fill="#aaa" font-family="Inter, sans-serif" font-size="9" font-weight="500">Google Public</text>
+  <text x="670" y="239" text-anchor="middle" fill="#666" font-family="Inter, sans-serif" font-size="8">8.8.8.8 / 8.8.4.4</text>
+
+  <!-- Application layer (right bottom) -->
+  <rect x="580" y="300" width="180" height="120" rx="10" stroke="#333" stroke-width="1.5" fill="#111"/>
+  <text x="670" y="328" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif" font-size="13" font-weight="700">APPLICATION</text>
+  <line x1="600" y1="340" x2="740" y2="340" stroke="#333" stroke-width="1"/>
+  <rect x="596" y="350" width="148" height="24" rx="4" fill="#1e1e1e" stroke="#444" stroke-width="1"/>
+  <text x="670" y="366" text-anchor="middle" fill="#aaa" font-family="Inter, sans-serif" font-size="9">MQTT / WebSocket / HTTP</text>
+  <rect x="596" y="382" width="148" height="24" rx="4" fill="#1e1e1e" stroke="#444" stroke-width="1"/>
+  <text x="670" y="398" text-anchor="middle" fill="#aaa" font-family="Inter, sans-serif" font-size="9">Seamless Reconnect</text>
+
+  <!-- Connection arrows -->
+  <!-- WiFi to core -->
+  <line x1="220" y1="170" x2="280" y2="190" stroke="#555" stroke-width="1.5" stroke-dasharray="6 3" marker-end="url(#arrow)"/>
+  <!-- Ethernet to core -->
+  <line x1="220" y1="360" x2="280" y2="310" stroke="#555" stroke-width="1.5" stroke-dasharray="6 3" marker-end="url(#arrow)"/>
+
+  <!-- Core to DNS -->
+  <line x1="520" y1="240" x2="580" y2="190" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="550" y="205" text-anchor="middle" fill="#666" font-family="Inter, sans-serif" font-size="8">DNS</text>
+
+  <!-- Core to App -->
+  <line x1="520" y1="285" x2="580" y2="350" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="550" y="325" text-anchor="middle" fill="#666" font-family="Inter, sans-serif" font-size="8">Callbacks</text>
+
+  <!-- Failover arrow between WiFi and Ethernet -->
+  <line x1="130" y1="230" x2="130" y2="260" stroke="#555" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="168" y="250" fill="#666" font-family="Inter, sans-serif" font-size="8">Failover</text>
+
+  <!-- Bottom bar -->
+  <rect x="40" y="445" width="720" height="24" rx="6" fill="#161616"/>
+  <text x="400" y="461" text-anchor="middle" fill="#444" font-family="Inter, sans-serif" font-size="9" font-weight="500" letter-spacing="1.5">18 FUNCTIONS &middot; PREFERENCE-BASED &middot; 3-TIER DNS &middot; ZERO-DOWNTIME &middot; ESP32 / S2 / S3 / C3 / C5 / C6 / H2</text>
+
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6" fill="#555"/>
+    </marker>
+  </defs>
+</svg>

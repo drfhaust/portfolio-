@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MacPad V1 - Macro Keyboard - Daniel Olaifa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<nav><div class="ni"><a href="../index.html" class="logo">daniel<span>.</span>olaifa</a><a href="../index.html#projects" class="back"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"/></svg>All Projects</a></div></nav>
+
+<div class="c c-narrow">
+<section class="hero">
+<span class="pt">Hardware Project / Embedded Systems</span>
+<h1>MacPad V1 - Macro Keyboard</h1>
+<div class="meta">
+<div class="meta-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"/></svg>2024</div>
+<div class="meta-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5"/></svg>C++ / Python / KiCad</div>
+</div>
+<p class="tagline">A custom 12-key macro keyboard with ESP32-S3, 4.3" 800x480 LVGL touchscreen, Cherry MX mechanical switches, addressable RGB LEDs, and a two-board master/slave architecture. USB HID keyboard emulation, WiFi AP with SD card file manager, Python macro configurator, and a 3D-printed SolidWorks enclosure. Two firmware branches - Arduino and ESP-IDF.</p>
+<div class="actions">
+<a href="mailto:akolaifa4@gmail.com" class="btn bp"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z"/></svg>Ask about this project</a>
+<a href="https://github.com/drfhaust/Macro-keyboard" target="_blank" class="btn bg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>View on GitHub</a>
+</div>
+</section>
+
+<section class="fi">
+<div class="specs"><h3>Technical Specs</h3><div class="spec-grid">
+<div class="spec-item"><div class="spec-label">MCU</div><div class="spec-value">ESP32-S3-WROOM-1-N8R8 (8MB Flash + 8MB PSRAM)</div></div>
+<div class="spec-item"><div class="spec-label">Display</div><div class="spec-value">4.3" RGB LCD, 800&times;480, ST7262 (16-bit parallel)</div></div>
+<div class="spec-item"><div class="spec-label">Touch</div><div class="spec-value">GT911 capacitive (I2C, 5-point)</div></div>
+<div class="spec-item"><div class="spec-label">IO Expander</div><div class="spec-value">CH422G (I2C @ 0x24/0x38)</div></div>
+<div class="spec-item"><div class="spec-label">USB Bridge</div><div class="spec-value">CH343P USB-to-UART (QFN-16)</div></div>
+<div class="spec-item"><div class="spec-label">USB Hub</div><div class="spec-value">CH334</div></div>
+<div class="spec-item"><div class="spec-label">Keys</div><div class="spec-value">12x Cherry MX mechanical switches</div></div>
+<div class="spec-item"><div class="spec-label">LEDs</div><div class="spec-value">Individually addressable RGB (15 colors)</div></div>
+<div class="spec-item"><div class="spec-label">USB Output</div><div class="spec-value">HID Keyboard (VID:0x303A PID:0x4004)</div></div>
+<div class="spec-item"><div class="spec-label">Storage</div><div class="spec-value">SD card via SPI (FAT, long filenames)</div></div>
+<div class="spec-item"><div class="spec-label">WiFi</div><div class="spec-value">SoftAP "KeyboardAP" + mDNS (keyboard.local)</div></div>
+<div class="spec-item"><div class="spec-label">GUI Framework</div><div class="spec-value">LVGL v8.3 + SquareLine Studio</div></div>
+<div class="spec-item"><div class="spec-label">Pixel Clock</div><div class="spec-value">16 MHz, RGB565 color</div></div>
+<div class="spec-item"><div class="spec-label">Architecture</div><div class="spec-value">Master/slave, Serial2 @ 9600 baud</div></div>
+<div class="spec-item"><div class="spec-label">PCB Design</div><div class="spec-value">KiCad, 2 revisions + GERBER exports</div></div>
+<div class="spec-item"><div class="spec-label">Enclosure</div><div class="spec-value">3D-printed, SolidWorks (bezel + keycaps)</div></div>
+<div class="spec-item"><div class="spec-label">Firmware</div><div class="spec-value">Arduino (main) + ESP-IDF v5.5 (branch)</div></div>
+<div class="spec-item"><div class="spec-label">Flash Layout</div><div class="spec-value">8MB with dual OTA partitions</div></div>
+</div></div>
+<div class="tags"><span class="tag a">ESP32-S3</span><span class="tag a">LVGL</span><span class="tag a">KiCad</span><span class="tag">USB HID</span><span class="tag">Cherry MX</span><span class="tag">RGB LED</span><span class="tag">TinyUSB</span><span class="tag">GT911</span><span class="tag">CH422G</span><span class="tag">SolidWorks</span><span class="tag">WiFi AP</span><span class="tag">SD Card</span><span class="tag">SquareLine Studio</span><span class="tag">3D Print</span></div>
+</section>
+
+<section class="fi">
+<div class="gallery"><div class="gi"><img src="../images/macro-keyboard-1.jpg" alt="MacPad V1 macro keyboard - 4.3 inch LVGL touchscreen showing splash screen, 12 Cherry MX keys with cyan RGB backlighting, 3D-printed enclosure, connected to iMac"></div></div>
+
+<div class="desc">
+<h3>Master/Slave Two-Board Architecture</h3>
+<p>MacPad uses a two-board design. The <strong>master board</strong> (ESP32-S3 with Waveshare 4.3" Touch LCD) handles the display, USB HID output, WiFi, and SD card storage. The <strong>slave board</strong> reads the 12 physical Cherry MX key switches and drives the individually addressable RGB LEDs. The boards communicate over Serial2 (GPIO 15/16 at 9600 baud) - the slave sends a single byte (1–12) when a key is pressed, and the master sends RGB color strings like <code>"255,0,0\n"</code> to change LED color. Connection detection uses GPIO 6 with an internal pull-up.</p>
+<p>The CH422G I2C IO expander manages the peripheral control lines - touch reset, LCD backlight, LCD reset, SD card chip select, and USB select - freeing ESP32-S3 GPIOs for the 16-bit parallel LCD data bus that consumes 16 pins on its own.</p>
+
+<h3>LVGL Touchscreen UI</h3>
+<p>The GUI is built with LVGL v8.3 and designed in SquareLine Studio. Screen 1 shows the MacPad V1 splash with a play button. Screen 2 presents the 12 macro buttons in a grid - each with a configurable icon and label - plus swipe gesture navigation between screens. The display runs in anti-tearing mode 3 (double-buffer + LVGL direct mode) with RGB bounce buffers to prevent visual artifacts during fast UI updates on the 800x480 panel.</p>
+</div>
+
+<div class="desc">
+<h3>USB HID &amp; Macro Engine</h3>
+<p>The keyboard enumerates as a standard USB HID device (Espressif VID 0x303A, PID 0x4004, boot protocol compatible). The ESP-IDF version includes a custom TinyUSB driver with full ASCII-to-HID keycode conversion (letters, digits, all symbols, shifted characters) and a clean API: <code>usb_hid_keyboard_press()</code>, <code>usb_hid_keyboard_print()</code>, <code>usb_hid_keyboard_send_combo()</code>. The macro engine supports four actions: <strong>paste</strong> (type text or Ctrl+V), <strong>copy</strong> (Ctrl+C), <strong>open</strong> (Win+R → path → Enter), and <strong>screenshot</strong> (Alt+PrintScreen).</p>
+<p>Macros are stored in <code>/button.json</code> on the SD card - each of the 12 buttons has a modifier, value, display text, and LED color (RGB array). The Python companion app (v3 and v4) provides a tkinter GUI for editing macros: 4x3 button grid, file/folder browser, LED color picker, and direct JSON save/load. v4 added the visual color chooser and removed the XOR encryption from v3.</p>
+
+<h3>WiFi Configuration &amp; SD File Manager</h3>
+<p>Toggling the WiFi switch in the UI starts a SoftAP ("KeyboardAP" / "password") with mDNS at <code>keyboard.local</code>. The built-in web server serves a full SD card file manager - browse directories, download files, upload new macro configs, and delete files, all from a phone or laptop browser. The web UI uses a red-themed "My Circuits" interface with table-based file listings.</p>
+</div>
+
+<div class="desc">
+<h3>Hardware Design &amp; Enclosure</h3>
+<p>The custom PCB was designed in KiCad with two revisions - featuring the ESP32-S3-WROOM-1-N8R8 module, CH343P USB-to-UART bridge (QFN-16), CH334 USB hub, and a B5819WS Schottky diode. Custom KiCad symbols and footprints were created for all non-standard components, each with STEP 3D models. GERBER manufacturing files were exported for both revisions.</p>
+<p>The 3D-printed enclosure was designed in SolidWorks as a multi-part assembly: screen bezel, key tops, key bottoms, and a full assembly (SLDASM) with STEP exports for each part. The enclosure cradles the touchscreen on top with the 4x3 Cherry MX key grid below, creating a compact desktop macro pad.</p>
+
+<h3>Dual Firmware: Arduino &amp; ESP-IDF</h3>
+<p>The <code>main</code> branch runs the Arduino version - a single <code>.ino</code> sketch using ESP_Panel_Library, USB.h, and ArduinoJson. The <code>esp-idf-version</code> branch ports everything to ESP-IDF v5.5.1 using Arduino as a component, adding proper TinyUSB HID/MSC drivers, a native LVGL port, OTA partition support, and C++17 throughout. The ESP-IDF version also includes an optional USB Mass Storage driver that can expose the SD card as a USB drive (gated behind a config flag to prevent filesystem corruption during local access).</p>
+</div>
+</section>
+</div>
+
+<footer><div class="c">&copy; 2026 Daniel Olaifa</div></footer>
+<script>
+const o = new IntersectionObserver(e => {
+  e.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('v');
+      o.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fi').forEach(e => o.observe(e));
+</script>
+</body>
+</html>

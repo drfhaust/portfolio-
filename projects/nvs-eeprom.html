@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NVS-EEPROM - Arduino EEPROM for ESP-IDF - Daniel Olaifa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<nav><div class="ni"><a href="../index.html" class="logo">daniel<span>.</span>olaifa</a><a href="../index.html#projects" class="back"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"/></svg>All Projects</a></div></nav>
+
+<div class="c c-narrow">
+<section class="hero">
+<span class="pt">ESP-IDF Component</span>
+<h1>NVS-EEPROM - Arduino EEPROM API for ESP-IDF</h1>
+<div class="meta">
+<div class="meta-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"/></svg>2025</div>
+<div class="meta-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5"/></svg>C / C++ / ESP-IDF</div>
+</div>
+<p class="tagline">Arduino-style EEPROM API backed by ESP-IDF's NVS flash system. Dual C/C++ interface with 8 functions, type-safe macros, C++ templates for any POD type, RAM-buffered writes with explicit commit for minimal flash wear, 0xFF default initialization matching real EEPROM behavior, NVS auto-recovery, and full bounds checking.</p>
+<div class="actions">
+<a href="mailto:akolaifa4@gmail.com" class="btn bp"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z"/></svg>Ask about this project</a>
+<a href="https://github.com/drfhaust/nvs-eeprom" target="_blank" class="btn bg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>View on GitHub</a>
+</div>
+</section>
+
+<section class="fi">
+<div class="specs"><h3>Technical Specs</h3><div class="spec-grid">
+<div class="spec-item"><div class="spec-label">Storage Backend</div><div class="spec-value">ESP-IDF NVS (Non-Volatile Storage)</div></div>
+<div class="spec-item"><div class="spec-label">C API</div><div class="spec-value">8 functions + 2 type-safe macros</div></div>
+<div class="spec-item"><div class="spec-label">C++ API</div><div class="spec-value">NVS_EEPROM class with 8 methods + templates</div></div>
+<div class="spec-item"><div class="spec-label">Max Size</div><div class="spec-value">16,384 bytes (4,096 recommended)</div></div>
+<div class="spec-item"><div class="spec-label">Data Types</div><div class="spec-value">Any POD type (int, float, struct, array)</div></div>
+<div class="spec-item"><div class="spec-label">Write Strategy</div><div class="spec-value">RAM-buffered, single blob commit</div></div>
+<div class="spec-item"><div class="spec-label">Default Value</div><div class="spec-value">0xFF (matches real EEPROM behavior)</div></div>
+<div class="spec-item"><div class="spec-label">NVS Recovery</div><div class="spec-value">Auto-erase on corrupt or version mismatch</div></div>
+<div class="spec-item"><div class="spec-label">Dependencies</div><div class="spec-value">nvs_flash (built-in ESP-IDF)</div></div>
+<div class="spec-item"><div class="spec-label">Target Chips</div><div class="spec-value">ESP32, S2, S3, C3, C5, C6, H2</div></div>
+<div class="spec-item"><div class="spec-label">ESP-IDF Version</div><div class="spec-value">&ge; 5.0.0</div></div>
+<div class="spec-item"><div class="spec-label">License</div><div class="spec-value">MIT</div></div>
+</div></div>
+<div class="tags"><span class="tag a">NVS</span><span class="tag a">EEPROM</span><span class="tag a">ESP-IDF</span><span class="tag">Arduino API</span><span class="tag">C/C++</span><span class="tag">Flash Wear</span><span class="tag">Type-Safe</span><span class="tag">Templates</span><span class="tag">Bounds Checking</span><span class="tag">MIT License</span></div>
+</section>
+
+<section class="fi">
+<div class="gallery"><div class="gi"><img src="../images/nvs-eeprom.png" alt="NVS-EEPROM - Arduino EEPROM API for ESP-IDF"></div></div>
+</section>
+
+<section class="fi">
+<div class="desc">
+<h3>Arduino-Compatible, Zero Arduino Dependencies</h3>
+<p>The API mirrors Arduino's EEPROM library - <code>begin(size)</code>, <code>read(addr)</code>, <code>write(addr, val)</code>, <code>commit()</code>, <code>end()</code> - so developers migrating from Arduino to ESP-IDF can use the same calling conventions. In C++ projects, <code>NVS_EEPROM EEPROM;</code> gives you an object with identical method signatures. The C API provides <code>NVS_EEPROM_GET()</code> and <code>NVS_EEPROM_PUT()</code> macros for type-safe access to any data type via <code>sizeof</code>, while the C++ class offers <code>get&lt;T&gt;()</code> and <code>put&lt;T&gt;()</code> templates.</p>
+
+<h3>RAM-Buffered Flash Wear Minimization</h3>
+<p>All writes go to a RAM buffer - nothing touches flash until <code>commit()</code> is called, which flushes the entire buffer to NVS as a single binary blob under the <code>"eeprom"</code> namespace and <code>"data"</code> key. This minimizes flash wear by batching multiple writes into one NVS transaction. Unwritten addresses read as 0xFF, matching real physical EEPROM behavior and enabling first-run detection patterns.</p>
+</div>
+</section>
+
+<section class="fi">
+<div class="desc">
+<h3>Defensive &amp; Self-Healing</h3>
+<p><code>begin()</code> handles NVS corruption automatically - if it encounters <code>ESP_ERR_NVS_NO_FREE_PAGES</code> or <code>ESP_ERR_NVS_NEW_VERSION_FOUND</code>, it erases and reinitializes NVS without crashing. If the stored blob size differs from the requested size (e.g., after a firmware update changes the EEPROM layout), the buffer is freshly initialized to 0xFF rather than reading corrupt data. All functions validate address bounds - out-of-range reads return 0xFF, out-of-range writes are silently ignored, and block operations clamp to available space. Double-initialization is caught with a warning log.</p>
+</div>
+</section>
+</div>
+
+<footer><div class="c">&copy; 2026 Daniel Olaifa</div></footer>
+<script>
+const o = new IntersectionObserver(e => {
+  e.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('v');
+      o.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fi').forEach(e => o.observe(e));
+</script>
+</body>
+</html>

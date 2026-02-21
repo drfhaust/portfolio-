@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SD Card Driver - SDIO &amp; SPI - Daniel Olaifa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<nav><div class="ni"><a href="../index.html" class="logo">daniel<span>.</span>olaifa</a><a href="../index.html#projects" class="back"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"/></svg>All Projects</a></div></nav>
+
+<div class="c c-narrow">
+<section class="hero">
+<span class="pt">ESP-IDF Component</span>
+<h1>SD Card Driver - SDIO &amp; SPI</h1>
+<div class="meta">
+<div class="meta-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"/></svg>2025</div>
+<div class="meta-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5"/></svg>C / ESP-IDF</div>
+</div>
+<p class="tagline">SD card driver for ESP-IDF with SDIO 4-bit/1-bit and SPI bus support. 21-function Arduino-style file API with automatic FAT mount, hot-plug detection via card detect GPIO, storage space monitoring, error tracking with 3-strike auto-degradation, status callbacks, and external SPI bus sharing. Zero external dependencies.</p>
+<div class="actions">
+<a href="mailto:akolaifa4@gmail.com" class="btn bp"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z"/></svg>Ask about this project</a>
+<a href="https://github.com/drfhaust/sd-card" target="_blank" class="btn bg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>View on GitHub</a>
+</div>
+</section>
+
+<section class="fi">
+<div class="specs"><h3>Technical Specs</h3><div class="spec-grid">
+<div class="spec-item"><div class="spec-label">Bus Modes</div><div class="spec-value">SDIO 4-bit, SDIO 1-bit, SPI, SPI external</div></div>
+<div class="spec-item"><div class="spec-label">Filesystem</div><div class="spec-value">FAT via esp_vfs_fat, auto-mount</div></div>
+<div class="spec-item"><div class="spec-label">API Surface</div><div class="spec-value">21 functions + 3 macros</div></div>
+<div class="spec-item"><div class="spec-label">File Operations</div><div class="spec-value">fopen, fclose, fwrite, fread, fflush, fseek, ftell</div></div>
+<div class="spec-item"><div class="spec-label">Filesystem Utils</div><div class="spec-value">exists, remove, file_size, mkdir</div></div>
+<div class="spec-item"><div class="spec-label">Hot-Plug</div><div class="spec-value">Card detect GPIO with configurable polarity</div></div>
+<div class="spec-item"><div class="spec-label">Error Tracking</div><div class="spec-value">3-strike auto-degradation to error state</div></div>
+<div class="spec-item"><div class="spec-label">Status States</div><div class="spec-value">5 (NO_CARD → AVAILABLE → ERROR)</div></div>
+<div class="spec-item"><div class="spec-label">Storage Info</div><div class="spec-value">Total, free, used (MB) + usage percentage</div></div>
+<div class="spec-item"><div class="spec-label">Configuration</div><div class="spec-value">Runtime structs + 3 convenience macros (no Kconfig)</div></div>
+<div class="spec-item"><div class="spec-label">Target Chips</div><div class="spec-value">ESP32, S2, S3, C3, C6, H2</div></div>
+<div class="spec-item"><div class="spec-label">ESP-IDF Version</div><div class="spec-value">&ge; 5.0.0</div></div>
+<div class="spec-item"><div class="spec-label">License</div><div class="spec-value">MIT</div></div>
+</div></div>
+<div class="tags"><span class="tag a">SD Card</span><span class="tag a">SDIO</span><span class="tag a">ESP-IDF</span><span class="tag">SPI</span><span class="tag">FAT</span><span class="tag">Hot-Plug</span><span class="tag">VFS</span><span class="tag">File I/O</span><span class="tag">Error Tracking</span><span class="tag">MIT License</span></div>
+</section>
+
+<section class="fi">
+<div class="gallery"><div class="gi"><img src="../images/sd-card.png" alt="SD Card driver - SDIO and SPI for ESP-IDF"></div></div>
+<div class="desc">
+<h3>Dual Bus Mode Support</h3>
+<p>The driver supports four initialization modes via convenience macros: <code>SD_CARD_SDIO_DEFAULT()</code> for SDIO 4-bit (fastest), SDIO 1-bit for reduced pin count, <code>SD_CARD_SPI_DEFAULT()</code> for SPI with internally-created bus, and <code>SD_CARD_SPI_EXTERNAL(host, cs)</code> for attaching to a pre-existing SPI bus shared with other peripherals. Passing NULL to <code>sd_card_init()</code> defaults to SDIO 4-bit with standard pin assignments.</p>
+<p>FAT filesystem mounting is automatic - the driver calls <code>esp_vfs_fat</code> internally and all file paths are auto-prepended with the configurable mount point (default <code>/sdcard</code>). The Arduino-style file API (<code>sd_fopen</code>, <code>sd_fwrite</code>, <code>sd_fread</code>, etc.) wraps standard C FILE* operations so users never deal with full VFS paths.</p>
+
+<h3>Hot-Plug Detection &amp; Error Tracking</h3>
+<p>When a card detect GPIO is configured, <code>sd_card_check()</code> polls for insertion/removal and automatically mounts or unmounts the filesystem. A status callback registered via <code>sd_card_on_status_change()</code> fires on every transition. The error tracking system counts consecutive failures - after 3 strikes, the driver transitions to an error state. A successful operation resets the counter. <code>sd_card_test_write()</code> provides a built-in write capability test.</p>
+</div>
+</section>
+
+<section class="fi">
+<div class="desc">
+<h3>Storage Monitoring &amp; Defensive API</h3>
+<p><code>sd_card_get_info()</code> fills an info struct with total, free, and used space in megabytes plus a usage percentage - useful for data logging applications that need to monitor remaining capacity. The API is defensive throughout: NULL config falls back to SDIO defaults, hot-plug functions gracefully no-op when no detect pin is set, and all file operations validate mount state before proceeding.</p>
+</div>
+</section>
+</div>
+
+<footer><div class="c">&copy; 2026 Daniel Olaifa</div></footer>
+<script>
+const o = new IntersectionObserver(e => {
+  e.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('v');
+      o.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fi').forEach(e => o.observe(e));
+</script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" fill="none">
+  <rect width="800" height="520" fill="#1a1a1a"/>
+
+  <!-- Title -->
+  <text x="400" y="36" text-anchor="middle" fill="#888" font-family="Inter, sans-serif" font-size="13" font-weight="500" letter-spacing="2">HUSB238 DRIVER ARCHITECTURE</text>
+
+  <!-- USB-C PD Source (left) -->
+  <rect x="40" y="180" width="120" height="160" rx="10" stroke="#444" stroke-width="1.5" fill="#111"/>
+  <text x="100" y="210" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif" font-size="12" font-weight="700">USB-C PD</text>
+  <text x="100" y="228" text-anchor="middle" fill="#555" font-family="Inter, sans-serif" font-size="9">SOURCE</text>
+  <line x1="60" y1="240" x2="140" y2="240" stroke="#333" stroke-width="1"/>
+  <text x="100" y="260" text-anchor="middle" fill="#aaa" font-family="Inter, sans-serif" font-size="9">5V</text>
+  <text x="100" y="275" text-anchor="middle" fill="#aaa" font-family="Inter, sans-serif" font-size="9">9V</text>
+  <text x="100" y="290" text-anchor="middle" fill="#aaa" font-family="Inter, sans-serif" font-size="9">12V</text>
+  <text x="100" y="305" text-anchor="middle" fill="#aaa" font-family="Inter, sans-serif" font-size="9">15V / 18V / 20V</text>
+  <text x="100" y="328" text-anchor="middle" fill="#555" font-family="Inter, sans-serif" font-size="8">500mA – 5A</text>
+
+  <!-- HUSB238 IC (center) -->
+  <rect x="220" y="120" width="160" height="280" rx="10" stroke="#555" stroke-width="1.5" fill="#111"/>
+  <text x="300" y="150" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif" font-size="13" font-weight="700">HUSB238</text>
+  <text x="300" y="168" text-anchor="middle" fill="#555" font-family="Inter, sans-serif" font-size="9">Hynetek USB-PD Sink IC</text>
+  <line x1="240" y1="180" x2="360" y2="180" stroke="#333" stroke-width="1"/>
+
+  <!-- Registers inside IC -->
+  <rect x="236" y="192" width="128" height="24" rx="4" fill="#1e1e1e" stroke="#444" stroke-width="1"/>
+  <text x="300" y="208" text-anchor="middle" fill="#aaa" font-family="Inter, sans-serif" font-size="9" font-weight="500">PD STATUS (0x00)</text>
+  <rect x="236" y="224" width="128" height="24" rx="4" fill="#1e1e1e" stroke="#444" stroke-width="1"/>
+  <text x="300" y="240" text-anchor="middle" fill="#aaa" font-family="Inter, sans-serif" font-size="9" font-weight="500">SRC PDO 5V–12V (0x01–03)</text>
+  <rect x="236" y="256" width="128" height="24" rx="4" fill="#1e1e1e" stroke="#444" stroke-width="1"/>
+  <text x="300" y="272" text-anchor="middle" fill="#aaa" font-family="Inter, sans-serif" font-size="9" font-weight="500">SRC PDO 15V–20V (0x08–0A)</text>
+  <rect x="236" y="288" width="128" height="24" rx="4" fill="#1e1e1e" stroke="#444" stroke-width="1"/>
+  <text x="300" y="304" text-anchor="middle" fill="#aaa" font-family="Inter, sans-serif" font-size="9" font-weight="500">SELECT PDO (0x10)</text>
+  <rect x="236" y="320" width="128" height="24" rx="4" fill="#1e1e1e" stroke="#444" stroke-width="1"/>
+  <text x="300" y="336" text-anchor="middle" fill="#aaa" font-family="Inter, sans-serif" font-size="9" font-weight="500">GO COMMAND (0x09)</text>
+
+  <!-- I2C label -->
+  <rect x="248" y="358" width="104" height="26" rx="4" fill="#1e1e1e" stroke="#333" stroke-width="1"/>
+  <text x="300" y="375" text-anchor="middle" fill="#555" font-family="Inter, sans-serif" font-size="9" font-weight="600">I2C @ 0x08</text>
+
+  <!-- Arrow USB-C to HUSB238 -->
+  <line x1="160" y1="260" x2="220" y2="260" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="190" y="252" text-anchor="middle" fill="#666" font-family="Inter, sans-serif" font-size="8">USB-C</text>
+  <text x="190" y="272" text-anchor="middle" fill="#666" font-family="Inter, sans-serif" font-size="8">CC lines</text>
+
+  <!-- Low-Level API -->
+  <rect x="440" y="70" width="320" height="170" rx="12" stroke="#333" stroke-width="1.5" fill="#111"/>
+  <text x="600" y="98" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif" font-size="13" font-weight="700">LOW-LEVEL REGISTER API</text>
+  <text x="600" y="116" text-anchor="middle" fill="#555" font-family="Inter, sans-serif" font-size="9">husb238.c &middot; 16 functions</text>
+  <line x1="480" y1="128" x2="720" y2="128" stroke="#333" stroke-width="1"/>
+
+  <rect x="460" y="140" width="130" height="34" rx="5" fill="#1e1e1e" stroke="#444" stroke-width="1"/>
+  <text x="525" y="157" text-anchor="middle" fill="#aaa" font-family="Inter, sans-serif" font-size="9" font-weight="500">husb238_get_status()</text>
+  <text x="525" y="168" text-anchor="middle" fill="#666" font-family="Inter, sans-serif" font-size="8">Read PD response</text>
+
+  <rect x="610" y="140" width="130" height="34" rx="5" fill="#1e1e1e" stroke="#444" stroke-width="1"/>
+  <text x="675" y="157" text-anchor="middle" fill="#aaa" font-family="Inter, sans-serif" font-size="9" font-weight="500">husb238_select_pd()</text>
+  <text x="675" y="168" text-anchor="middle" fill="#666" font-family="Inter, sans-serif" font-size="8">Set target voltage</text>
+
+  <rect x="460" y="184" width="130" height="34" rx="5" fill="#1e1e1e" stroke="#444" stroke-width="1"/>
+  <text x="525" y="201" text-anchor="middle" fill="#aaa" font-family="Inter, sans-serif" font-size="9" font-weight="500">husb238_get_src_pdo()</text>
+  <text x="525" y="212" text-anchor="middle" fill="#666" font-family="Inter, sans-serif" font-size="8">Query capabilities</text>
+
+  <rect x="610" y="184" width="130" height="34" rx="5" fill="#1e1e1e" stroke="#444" stroke-width="1"/>
+  <text x="675" y="201" text-anchor="middle" fill="#aaa" font-family="Inter, sans-serif" font-size="9" font-weight="500">husb238_go_command()</text>
+  <text x="675" y="212" text-anchor="middle" fill="#666" font-family="Inter, sans-serif" font-size="8">Request / Reset</text>
+
+  <!-- High-Level Controller API -->
+  <rect x="440" y="270" width="320" height="200" rx="12" stroke="#333" stroke-width="1.5" fill="#111"/>
+  <text x="600" y="298" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif" font-size="13" font-weight="700">HIGH-LEVEL CONTROLLER API</text>
+  <text x="600" y="316" text-anchor="middle" fill="#555" font-family="Inter, sans-serif" font-size="9">husb238_controller.c &middot; 13 functions &middot; FreeRTOS</text>
+  <line x1="480" y1="328" x2="720" y2="328" stroke="#333" stroke-width="1"/>
+
+  <!-- State Machine -->
+  <rect x="460" y="338" width="80" height="22" rx="4" fill="#1e1e1e" stroke="#444" stroke-width="1"/>
+  <text x="500" y="353" text-anchor="middle" fill="#aaa" font-family="Inter, sans-serif" font-size="8" font-weight="500">NOT_PRESENT</text>
+  <line x1="540" y1="349" x2="555" y2="349" stroke="#555" stroke-width="1" marker-end="url(#arrow)"/>
+  <rect x="558" y="338" width="80" height="22" rx="4" fill="#1e1e1e" stroke="#444" stroke-width="1"/>
+  <text x="598" y="353" text-anchor="middle" fill="#aaa" font-family="Inter, sans-serif" font-size="8" font-weight="500">INITIALIZING</text>
+  <line x1="638" y1="349" x2="653" y2="349" stroke="#555" stroke-width="1" marker-end="url(#arrow)"/>
+  <rect x="656" y="338" width="80" height="22" rx="4" fill="#1e1e1e" stroke="#444" stroke-width="1"/>
+  <text x="696" y="353" text-anchor="middle" fill="#aaa" font-family="Inter, sans-serif" font-size="8" font-weight="500">WAITING_PD</text>
+
+  <!-- State row 2 -->
+  <line x1="696" y1="360" x2="696" y2="372" stroke="#555" stroke-width="1" marker-end="url(#arrow)"/>
+  <rect x="656" y="375" width="80" height="22" rx="4" fill="#1e1e1e" stroke="#555" stroke-width="1.5"/>
+  <text x="696" y="390" text-anchor="middle" fill="#fff" font-family="Inter, sans-serif" font-size="8" font-weight="700">CONNECTED</text>
+
+  <rect x="460" y="375" width="80" height="22" rx="4" fill="#1e1e1e" stroke="#444" stroke-width="1"/>
+  <text x="500" y="390" text-anchor="middle" fill="#aaa" font-family="Inter, sans-serif" font-size="8" font-weight="500">ERROR</text>
+
+  <!-- Controller functions -->
+  <rect x="460" y="410" width="140" height="24" rx="4" fill="#1e1e1e" stroke="#444" stroke-width="1"/>
+  <text x="530" y="426" text-anchor="middle" fill="#aaa" font-family="Inter, sans-serif" font-size="8" font-weight="500">next_voltage() / request()</text>
+
+  <rect x="616" y="410" width="124" height="24" rx="4" fill="#1e1e1e" stroke="#444" stroke-width="1"/>
+  <text x="678" y="426" text-anchor="middle" fill="#aaa" font-family="Inter, sans-serif" font-size="8" font-weight="500">Callbacks + Mutex</text>
+
+  <rect x="460" y="442" width="280" height="18" rx="4" fill="#1e1e1e" stroke="#333" stroke-width="1"/>
+  <text x="600" y="455" text-anchor="middle" fill="#555" font-family="Inter, sans-serif" font-size="8" font-weight="600">Hot-Plug Detection &middot; Auto-Reconnect &middot; Thread-Safe</text>
+
+  <!-- I2C Arrow from HUSB238 to APIs -->
+  <line x1="380" y1="200" x2="440" y2="155" stroke="#555" stroke-width="1.5" stroke-dasharray="6 3"/>
+  <line x1="380" y1="300" x2="440" y2="370" stroke="#555" stroke-width="1.5" stroke-dasharray="6 3"/>
+  <text x="410" y="175" text-anchor="middle" fill="#666" font-family="Inter, sans-serif" font-size="8">I2C</text>
+
+  <!-- Bottom bar -->
+  <rect x="40" y="488" width="720" height="24" rx="6" fill="#161616"/>
+  <text x="400" y="504" text-anchor="middle" fill="#444" font-family="Inter, sans-serif" font-size="9" font-weight="500" letter-spacing="1.5">32 FUNCTIONS &middot; 5-STATE MACHINE &middot; 7 KCONFIG &middot; 3 EXAMPLES &middot; MIT &middot; ESPRESSIF REGISTRY</text>
+
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6" fill="#555"/>
+    </marker>
+  </defs>
+</svg>

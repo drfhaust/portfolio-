@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Net-Switcher - WiFi/Ethernet Failover - Daniel Olaifa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<nav><div class="ni"><a href="../index.html" class="logo">daniel<span>.</span>olaifa</a><a href="../index.html#projects" class="back"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"/></svg>All Projects</a></div></nav>
+
+<div class="c c-narrow">
+<section class="hero">
+<span class="pt">ESP-IDF Component</span>
+<h1>Net-Switcher - WiFi/Ethernet Failover</h1>
+<div class="meta">
+<div class="meta-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"/></svg>2025</div>
+<div class="meta-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5"/></svg>C / ESP-IDF</div>
+</div>
+<p class="tagline">WiFi/Ethernet network switcher for ESP-IDF with preference-based routing, automatic failover, 3-tier DNS resolution, pre/post switch callbacks, and DHCP management. 18-function API for dual-interface IoT devices that need zero-downtime connectivity.</p>
+<div class="actions">
+<a href="mailto:akolaifa4@gmail.com" class="btn bp"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z"/></svg>Ask about this project</a>
+<a href="https://github.com/drfhaust/net-switcher" target="_blank" class="btn bg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>View on GitHub</a>
+</div>
+</section>
+
+<section class="fi">
+<div class="specs"><h3>Technical Specs</h3><div class="spec-grid">
+<div class="spec-item"><div class="spec-label">Interfaces</div><div class="spec-value">WiFi STA + Ethernet (W5500, etc.)</div></div>
+<div class="spec-item"><div class="spec-label">Failover</div><div class="spec-value">Automatic preference-based switching</div></div>
+<div class="spec-item"><div class="spec-label">DNS Strategy</div><div class="spec-value">3-tier (interface → gateway → 8.8.8.8)</div></div>
+<div class="spec-item"><div class="spec-label">Callbacks</div><div class="spec-value">Pre-switch + post-switch hooks</div></div>
+<div class="spec-item"><div class="spec-label">API Surface</div><div class="spec-value">18 functions, 1 enum, 1 callback type</div></div>
+<div class="spec-item"><div class="spec-label">DHCP</div><div class="spec-value">Auto-stop on inactive interface</div></div>
+<div class="spec-item"><div class="spec-label">Dependencies</div><div class="spec-value">esp_netif, lwip, esp_event</div></div>
+<div class="spec-item"><div class="spec-label">Target Chips</div><div class="spec-value">ESP32, S2, S3, C3, C5, C6, H2</div></div>
+<div class="spec-item"><div class="spec-label">ESP-IDF Version</div><div class="spec-value">≥ 5.0.0</div></div>
+<div class="spec-item"><div class="spec-label">Configuration</div><div class="spec-value">Runtime only (no Kconfig)</div></div>
+<div class="spec-item"><div class="spec-label">Version</div><div class="spec-value">1.0.0</div></div>
+<div class="spec-item"><div class="spec-label">License</div><div class="spec-value">MIT</div></div>
+</div></div>
+<div class="tags"><span class="tag a">WiFi</span><span class="tag a">Ethernet</span><span class="tag a">ESP-IDF</span><span class="tag">W5500</span><span class="tag">Failover</span><span class="tag">DNS</span><span class="tag">lwIP</span><span class="tag">esp_netif</span><span class="tag">Dual-Interface</span><span class="tag">IoT</span><span class="tag">MIT License</span></div>
+</section>
+
+<section class="fi">
+<div class="gallery"><div class="gi"><img src="../images/net-switcher.png" alt="Net-Switcher WiFi/Ethernet Failover - WiFi router and Ethernet jack with failover arrows, architecture flowchart showing preference engine, DNS resolver, and pre/post callbacks, ESP32 board with W5500 Ethernet module, branded banner with ESP-IDF Component tags"></div></div>
+
+<div class="desc">
+<h3>Preference-Based Failover Logic</h3>
+<p>The core of Net-Switcher is a preference-based routing decision in <code>net_switcher_update()</code>. You set a preferred interface (Ethernet or WiFi), and the switcher always routes through it when available - falling back to the other interface only when the preferred one drops. When the preferred link comes back, it switches back automatically. The user wires this into their WiFi/IP event handlers by calling <code>net_switcher_setWiFiConnected()</code> or <code>net_switcher_setEthernetConnected()</code> then <code>net_switcher_update()</code> - keeping the component event-agnostic so it works with any network stack setup.</p>
+<p>The switching decision is deterministic: preferred + available = use it; preferred + unavailable = failover; neither available = do nothing. <code>net_switcher_switchTo()</code> provides a manual override that bypasses the preference logic entirely for cases where the application needs direct control.</p>
+
+<h3>3-Tier DNS Resolution</h3>
+<p>Network switches break DNS if the new interface has different name servers. The internal <code>push_dns_to_lwip()</code> function handles this with a 3-tier fallback: first, it reads <code>ESP_NETIF_DNS_MAIN</code> and <code>ESP_NETIF_DNS_BACKUP</code> from the target interface and pushes them to lwIP via <code>dns_setserver()</code>. If neither is valid, it falls back to the gateway IP (most routers forward DNS) with Google's 8.8.4.4 as backup. As a last resort, it uses 8.8.8.8 / 8.8.4.4. After every DNS change, <code>dns_clear_cache()</code> flushes stale entries so the first request on the new interface resolves correctly.</p>
+</div>
+</section>
+
+<section class="fi">
+<div class="desc">
+<h3>Switch Lifecycle &amp; DHCP</h3>
+<p>The actual switch (<code>do_switch()</code>) follows a strict sequence: fire the pre-switch callback (so the app can disconnect MQTT, WebSocket, or other services), stop DHCP on the inactive interface via <code>esp_netif_dhcpc_stop()</code>, set the new default netif, push DNS servers, update internal state, then fire the post-switch callback (so the app can reconnect). If the target is already the active interface, it just refreshes the default netif and DNS without triggering callbacks - preventing unnecessary reconnection churn.</p>
+
+<h3>Minimal &amp; Event-Agnostic Design</h3>
+<p>The component deliberately does <em>not</em> subscribe to ESP-IDF events internally. Instead, it exposes <code>setWiFiConnected()</code> / <code>setEthernetConnected()</code> and expects the application to call them from its own event handlers. This keeps the component decoupled from any specific WiFi or Ethernet driver setup. All state is runtime-configured through the 18-function API - there's no Kconfig, no compile-time settings. Dependencies are limited to three core ESP-IDF components: <code>esp_netif</code>, <code>lwip</code>, and <code>esp_event</code>.</p>
+</div>
+</section>
+</div>
+
+<footer><div class="c">&copy; 2026 Daniel Olaifa</div></footer>
+<script>
+const o = new IntersectionObserver(e => {
+  e.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('v');
+      o.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fi').forEach(e => o.observe(e));
+</script>
+</body>
+</html>
